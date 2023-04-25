@@ -19,6 +19,7 @@
         @include border-radius(40px, 40px, 40px, 40px);
         background-size: contain;
         margin-right: 15px;
+        cursor: pointer;
         img {
           @include border-radius(40px, 40px, 40px, 40px);
         }

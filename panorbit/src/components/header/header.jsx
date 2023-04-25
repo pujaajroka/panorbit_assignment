@@ -20,7 +20,7 @@ const Header = (props) => {
     <div className="header">
       <h2>{props.title}</h2>
       <div className="profile-pic">
-        <div
+        <div onClick={(e) => handleOpenPopup(e)}
           className="pic"
           style={
             user && { backgroundImage: "url(" + user.profilepicture + ")" }
