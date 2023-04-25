@@ -3,24 +3,31 @@ import "./userList.scss";
 import { userRequest } from "../../requestMethod";
 import User from "../user/user";
 import { saveUsers } from "../../redux/usersRedux";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 
 
 
 const UserList = (props) => {
   const ASSETS = process.env.REACT_APP_ASSETS_URL;
+  const usersState = useSelector((state) => state.usersDetails);
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
 
   const getUserList = async () => {
-    const response = await userRequest.get("/users.json");
-    if(response) setUsers(response.data.users);
-    dispatch(saveUsers(response.data.users));
+    if(!usersState.users.length) {
+      const response = await userRequest.get("/users.json");
+      if(response) setUsers(response.data.users);
+      dispatch(saveUsers(response.data.users));
+    } else {
+      setUsers(usersState.users); 
+    }
+   
   };
 
   useEffect(() => {
     getUserList();
   }, []);
+
   return (
     <div className="wrapper-container">
       <div className="user-container">
