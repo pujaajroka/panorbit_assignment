@@ -1,0 +1,167 @@
+@import "_variables.scss", "_mixin.scss";
+.user-details {
+  margin: 0px 40px; //60
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 1px $border-color;
+    padding: 15px 0 30px 0;
+    h2 {
+      color: $tertiary-font-color;
+      font-size: 1.5rem;
+    }
+    .profile-pic {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .pic {
+        width: 40px;
+        height: 40px;
+        @include border-radius(40px, 40px, 40px, 40px);
+        background-size: contain;
+        margin-right: 15px;
+        img {
+          @include border-radius(40px, 40px, 40px, 40px);
+        }
+      }
+      .user-name {
+        font-size: 1.2rem;
+        color: $tertiary-font-color;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+      }
+    }
+  }
+  .user-info-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .left-section {
+        
+      width: 40%; //35
+      .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-right: solid 1px $tertiary-border-color;
+        margin-top: 35px;
+        .pro-pic {
+          width: 260px;
+          height: 260px;
+          @include border-radius(260px, 260px, 260px, 260px);
+          border: 1px solid grey;
+          margin: auto;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        > span {
+          text-align: center;
+          padding: 15px;
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: $tertiary-font-color;
+        }
+        .fields {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 2px 0;
+          label {
+            color: $gray-font-color;
+            font-size: 1.4rem;
+            font-weight: 400;
+            min-width: 45%;
+            text-align: right;
+          }
+          > span {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: $tertiary-font-color;
+            padding-left: 10px;
+            display: inline-block;
+
+            width: 55%;
+          }
+        }
+        h3 {
+          color: $gray-font-color;
+          font-size: 1.4rem;
+          font-weight: 400;
+          text-align: center;
+          margin: 10px 0;
+        }
+        hr{
+            margin: 25px 60px 10px;
+            background-color:$tertiary-border-color;
+            border: none;
+            height: 1px;
+        }
+      }
+    }
+    .right-section {
+      width: 65%;
+      .details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 40px;
+        h3 {
+            color: $gray-font-color;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-align: left;
+            margin: 10px 0 0 20px;
+          }
+          .fields {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px 0;
+            label {
+              color: $gray-font-color;
+              font-size: 1.4rem;
+              font-weight: 400;
+              min-width: 25%;
+              text-align: right;
+            }
+            > span {
+              font-size: 1.4rem;
+              font-weight: 500;
+              color: $tertiary-font-color;
+              padding-left: 10px;
+              display: inline-block;
+              width: 75%;
+            }
+          }
+      }
+      .location-map{
+        width:100%;
+        min-height:430px;
+        border:solid 1px #ddd;
+        @include border-radius(25px,25px,25px,25px);
+        margin-left: 85px;
+      }
+     }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .user-details {
+    margin: 0px;
+    .user-info-section {
+      flex-direction: column;
+      justify-content: center;
+      .left-section {
+        width: auto;
+        .details {
+          border: none;
+        }
+      }
+     
+    }
+  }
+}

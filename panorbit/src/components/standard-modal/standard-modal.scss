@@ -1,0 +1,88 @@
+@import "_variables.scss", "_mixin.scss";
+
+.standard-modal {
+  min-height: 400px;
+  position: absolute;
+  top: 50px;
+  left: -145px;
+  min-width: 340px;
+  z-index: 100;
+  background: #fff;
+  @include border-radius(25px, 25px, 25px, 25px);
+  @include box-shadow(0px, 0px, 20px, 0px, rgb(217, 217, 217));
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  .standard-modal-inner-container {
+    width: 100%;
+    padding: 35px 0;
+    // margin-top:36px;
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+      border: 1px solid grey;
+      margin: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include border-radius(50px, 50px, 50px, 50px);
+    }
+    .fields {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 0;
+      &.mail {
+        color: $light-gray-font;
+        font-weight: normal;
+      }
+      &.connect {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0 75px;
+        span, a {
+            font-weight: normal;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: $secondry-font-color;
+        }
+        .pic {
+            width: 27px;
+            height: 27px;
+            @include border-radius(27px, 27px, 27px, 27px);
+            background-size: contain;
+        }
+      }
+    }
+    
+    hr {
+      margin: 25px 60px 10px;
+      background-color: $grey-margin;
+      border: none;
+      height: 1px;
+    }
+    .sign-in {
+      padding: 17px 0px;
+
+      button {
+        height: 35px;
+        width: 90px;
+        @include border-radius(15px, 15px, 15px, 15px);
+        background-color: $button-red-color;
+        border: none;
+        color: $white;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 5px;
+      }
+    }
+  }  
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 99;
+}

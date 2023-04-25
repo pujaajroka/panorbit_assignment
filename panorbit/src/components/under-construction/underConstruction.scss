@@ -1,0 +1,14 @@
+@import "_variables.scss", "_mixin.scss";
+.under-construction{
+    margin: 0px 40px;
+    .content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          h2 {
+             font-size: 7rem;
+             color: $lite-gray-font-2;
+             margin-top: 25%;
+          }
+    }
+}

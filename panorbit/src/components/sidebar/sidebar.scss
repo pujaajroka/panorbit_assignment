@@ -1,0 +1,53 @@
+@import "_variables.scss", "_mixin.scss";
+
+.sidebar-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: $bg-color-blue;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  @include border-radius(25px, 25px, 25px, 25px);
+  .slide-icon {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    width: 40px;
+    height: 64px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sidebar-container {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    transition: all 500ms ease-in-out;
+    z-index: 1;
+    .slide-icon {
+       transform: rotate(180deg);
+       right: -40px;
+       &.open {
+        display: none;
+       }
+       &.close {
+        display: block;
+       }
+    }
+    &.open {
+      left: 0;
+      .slide-icon {
+        &.open {
+          display: none;
+          right: 0;
+         }
+         &.close {
+          display: block;
+          right: 0;
+          transform: rotate(0deg);
+         }
+      }
+    }
+  }
+}

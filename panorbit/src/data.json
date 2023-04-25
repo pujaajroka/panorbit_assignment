@@ -1,0 +1,20 @@
+{
+  "Nav": [
+    {
+      "displayName": "Profile",
+      "link": "/profile/"
+    },
+    {
+      "displayName": "Posts",
+      "link": "/posts"
+    },
+    {
+      "displayName": "Gallery",
+      "link": "/gallery"
+    },
+    {
+      "displayName": "ToDo",
+      "link": "/todo"
+    }
+  ]
+}

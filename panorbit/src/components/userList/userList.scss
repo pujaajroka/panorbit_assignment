@@ -1,0 +1,93 @@
+@import "_variables.scss", "_mixin.scss";
+
+.wrapper-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../../../public/assets/bg-img.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  .user-container {
+    width: $layout-width-1;
+    max-width: $layout-width-1;
+    min-height: 200px;
+    border: solid 1px $border-color;
+    @include box-shadow(0px, 0px, 5px, 0px, rgba(148, 148, 148, 1));
+    @include border-radius(25px, 25px, 25px, 25px);
+    box-sizing: border-box;
+    background-color: $white;
+    .header_container {
+      width: 100%;
+      height: 136px;
+      background-color: $lite-gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include border-radius(25px, 25px, 0px, 0px);
+      h2{
+        margin: 0;
+        color:$base-font-color;
+      }
+    }
+    .content{
+        padding:0px 50px;
+        max-height: 500px;
+        overflow: auto;
+        ul{
+            list-style: none;
+            li{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 16px 0;
+                border-bottom: solid 1px $border-color;
+                cursor: pointer;
+                > div{
+                    width: 40px;
+                    height: 40px;
+                    @include border-radius(40px, 40px, 40px, 40px);
+                    overflow: hidden;
+                    img {
+                      width: 40px;
+                    }
+                }
+                h4{
+                    
+                    a {
+                     text-decoration: none;
+                      color: $secondry-font-color;
+                      margin-left: 20px;
+                      font-size: 1.30rem;
+                      font-weight: normal;
+                    }
+                }
+            }
+        }
+        &::-webkit-scrollbar {
+          width: 8px;
+        }        
+        &::-webkit-scrollbar-track {
+          background-color: #ffffff;
+          border-radius: 100px;
+        }        
+        &::-webkit-scrollbar-thumb {
+          background-color: #bfbfbf;
+          border-radius: 100px;
+        }
+
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper-container {
+    .user-container {
+       align-items: start;
+    }
+  }
+}
+

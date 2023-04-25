@@ -1,0 +1,12 @@
+@import  "_global.scss";
+
+.profile-container{    
+   @extend .container;
+}
+
+@media only screen and (max-width: 768px) {
+   .profile-container{    
+      @extend .container;
+      margin:15px;
+   }
+ }

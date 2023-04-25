@@ -1,0 +1,23 @@
+@import "_variables.scss", "_mixin.scss";
+.nav {
+    margin: 0 60px;
+    width: 100%;
+  ul {
+    list-style: none;
+    li {
+        padding: 14px 0;
+        border-bottom: solid 1px  $secondary-border-color;
+      a {
+        text-decoration: none;
+        color: $primary-font-color;
+        font-size: 25px;
+        &:hover {
+          color: $white;
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
